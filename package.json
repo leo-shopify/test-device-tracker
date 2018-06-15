@@ -1,0 +1,27 @@
+{
+  "name": "test-device-tracker",
+  "version": "1.0.0-alpha",
+  "description": "Web app to track test devices from the device wall",
+  "author": "Leonardo Rojas <leonardo.rojas@shopify.com>",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "dev-client": "parcel client/index.html",
+    "build-client": "rm -r dist && parcel build --experimental-scope-hoisting client/index.html"
+  },
+  "dependencies": {
+    "hyperhtml": "^2.10.8",
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
+    "koa-static-cache": "^5.1.2",
+    "node-fetch": "^2.1.2",
+    "parcel-bundler": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.5"
+  }
+}

@@ -1,0 +1,101 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
+#+TITLE: Test device tracker
+#+DATE: <2018-06-14 Thu>
+#+AUTHOR: Leonardo Rojas
+#+EMAIL: leonardo.rojas@shopify.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode 9.1.13)
+
+
+Who has the device when it's not in the device wall?
+
+
+* Description
+
+When devices go missing from the device wall/cart it is difficult to locate
+them. Even though there is a signup sheet people forget to fill it in.
+
+The proposed solution is to password protect the devices and put the instruction
+to unlock them in a site that requires authentication. This creates the
+motivation to register the checkout and makes the checkout information available
+to everyone.
+
+A stretch goal is to be able to send messages to devices.
+
+
+* Running
+#+name: npm-scripts
+#+begin_src sh :results output replace :exports results
+  npm run
+#+end_src
+
+#+RESULTS: npm-scripts
+#+begin_example
+Lifecycle scripts included in test-device-tracker:
+  test
+    echo "Error: no test specified" && exit 1
+  start
+    nodemon server/index.js
+
+available via `npm run-script`:
+  dev-client
+    parcel client/index.html
+  build-client
+    rm -r dist && parcel build --experimental-scope-hoisting client/index.html
+#+end_example
+
+
+* How it works
+
+
+* To do
+- [ ] Add type annotations.
+- [ ] Add tests.
+
+** Server
+- [ ] Create /development/ and /production/ environments.
+  - [ ] Create corresponding scripts in file:package.json.
+- [ ] Use SSL.
+- [ ] Improve cookie security.
+- [ ] Create custom error pages.
+- [ ] Check ~email_verified~
+
+
+* References
+- [[https://vault.shopify.com/Toronto-Test-Devices][Toronto Test Devices]] vault page
+- [[https://images.apple.com/business/resources/docs/Managing_Devices_and_Corporate_Data_on_iOS.pdf][Managing Devices and Corporate Data on iOS]]
+- [[https://developers.google.com/identity/protocols/OAuth2][Google OAuth2]]
+- [[https://developers.google.com/identity/protocols/googlescopes#oauth2v2][Google OAuth2 API, v2 scopes]]
+- IDP: https://console.developers.google.com/apis/credentials?project=test-device-tracker-idp
+- [[https://docs.shopifycloud.com/][CloudPlatform guide]]
+- iOS app management https://www.miradore.com/
+
+
+* WIP notes
+
+** Visit $URL to see the list of
+
+*** Devices
+- Location
+- Platform
+- Device
+- Name
+- OS version
+- Colour
+- Serial
+- Status (checked in | out)
+
+*** Accessories
+- Kind (cable | charger)
+- Id
+- Status (checked in | out)
+
+** Login to
+- Check out device
+- See who is the current/last holder
+- Unlock instructions

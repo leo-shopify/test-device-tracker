@@ -1,0 +1,7 @@
+{
+  "env": {"browser": true},
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module"
+  }
+}
