@@ -1,0 +1,20 @@
+{
+  "name": "test-device-tracker",
+  "version": "1.0.0-alpha",
+  "description": "Web app to track test devices from the device wall",
+  "author": "Leonardo Rojas <leonardo.rojas@shopify.com>",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-client": "parcel client/index.html",
+    "build-client": "rm -r dist && parcel build --experimental-scope-hoisting client/index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}

@@ -1,0 +1,26 @@
+name: test-device-tracker
+
+type: ruby
+
+up:
+  - homebrew:
+    - openssl
+  - ruby: 2.5.1
+  - node:
+      yarn: true
+      version: v10.6.0
+  - bundler
+  - railgun
+
+commands:
+  server:
+    desc: 'start the application'
+    run: rerun -- puma server/config.ru --bind tcp://0.0.0.0:8888
+  test:
+    syntax:
+      argument: file
+      optional: args...
+    run: bin/testunit
+
+open:
+  app: https://test-device-tracker.myshopify.io/

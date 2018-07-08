@@ -1,0 +1,18 @@
+# https://dev-accel.shopify.io/dev/railgun/Railgun-Config
+name: test-device-tracker
+
+vm:
+  image:      /opt/dev/misc/railgun-images/default
+  ip_address: 192.168.64.113
+  memory:     2G
+  cores:      2
+
+volumes:
+  root: 2G
+
+services:
+  - nginx
+  - mysql
+
+hostnames:
+  - test-device-tracker.myshopify.io: { proxy_to_host_port: 8888 }
